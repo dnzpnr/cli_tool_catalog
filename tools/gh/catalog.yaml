@@ -1,0 +1,12 @@
+name: gh
+description: GitHub CLI — issues, pull requests, releases
+license: MIT
+capabilities_hint: [github_issues, github_pull_requests, github_releases]
+install_method: archive
+source:
+  repo: https://github.com/cli/cli
+  version: v2.101.0
+  asset: https://github.com/cli/cli/releases/download/v2.101.0/gh_2.101.0_linux_amd64.tar.gz
+  sha256: 9bca2d1c16825f109907a23307628a2f0698fbf99662b73a5cf0b020293072b8
+  archive: tar.gz
+  binary_path: gh_2.101.0_linux_amd64/bin/gh

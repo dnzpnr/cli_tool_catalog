@@ -1,0 +1,12 @@
+name: himalaya
+description: Email CLI — IMAP/JMAP/Gmail/Microsoft Graph mailboxes
+license: MIT
+capabilities_hint: [mail_read, mail_send]
+install_method: archive
+source:
+  repo: https://github.com/pimalaya/himalaya
+  version: v2.1.0
+  asset: https://github.com/pimalaya/himalaya/releases/download/v2.1.0/himalaya.x86_64-linux.tgz
+  sha256: 683a2ab8e1534f01e6bda3a69e204d564c31fbfbe20511fc7bc60b67f2e85884
+  archive: tgz
+  binary_path: himalaya

@@ -1,0 +1,12 @@
+name: usql
+description: Universal SQL CLI — MySQL, SQL Server, Oracle, SQLite, Snowflake and more
+license: MIT
+capabilities_hint: [multi_database_sql]
+install_method: archive
+source:
+  repo: https://github.com/xo/usql
+  version: v0.21.6
+  asset: https://github.com/xo/usql/releases/download/v0.21.6/usql-0.21.6-linux-amd64.tar.bz2
+  sha256: b3046140f8f2add0e2afaaa595b824d445e933d400a00d50a1c038760d4ce13c
+  archive: tar.bz2
+  binary_path: usql

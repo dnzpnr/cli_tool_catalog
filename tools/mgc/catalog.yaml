@@ -1,0 +1,12 @@
+name: mgc
+description: Microsoft Graph CLI — Outlook, OneDrive, Teams, Calendar
+license: MIT
+capabilities_hint: [ms365_mail, ms365_onedrive, ms365_teams, ms365_calendar]
+install_method: archive
+source:
+  repo: https://github.com/microsoftgraph/msgraph-cli
+  version: v1.9.0
+  asset: https://github.com/microsoftgraph/msgraph-cli/releases/download/v1.9.0/msgraph-cli-linux-x64-1.9.0.tar.gz
+  sha256: fe550ffb29b8455be7994303cf8c2563791e1112848374155b012b0cc93e1668
+  archive: tar.gz
+  binary_path: mgc

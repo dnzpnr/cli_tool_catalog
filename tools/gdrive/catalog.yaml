@@ -1,0 +1,12 @@
+name: gdrive
+description: Google Drive command line client
+license: MIT
+capabilities_hint: [gdrive_files]
+install_method: archive
+source:
+  repo: https://github.com/glotlabs/gdrive
+  version: "3.9.1"
+  asset: https://github.com/glotlabs/gdrive/releases/download/3.9.1/gdrive_linux-x64.tar.gz
+  sha256: 0646efa1ed15a6151ef5e1a4f723825c81935591ad7a01e86685afa8138bc7c9
+  archive: tar.gz
+  binary_path: gdrive

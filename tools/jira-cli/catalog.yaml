@@ -1,0 +1,12 @@
+name: jira-cli
+description: Jira command line — tickets, boards, sprints
+license: MIT
+capabilities_hint: [jira_issues, jira_tickets]
+install_method: archive
+source:
+  repo: https://github.com/ankitpokhrel/jira-cli
+  version: v1.7.0
+  asset: https://github.com/ankitpokhrel/jira-cli/releases/download/v1.7.0/jira_1.7.0_linux_x86_64.tar.gz
+  sha256: b5e0ba4804f3f11f92c483d9a6ea9ebccec1c735cd2e12b0440cab9d7afd626a
+  archive: tar.gz
+  binary_path: jira_1.7.0_linux_x86_64/bin/jira
