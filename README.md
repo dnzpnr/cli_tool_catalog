@@ -52,7 +52,7 @@ detect:                         # at least one signature; no other sub-keys
   listening_port: <port integer or list of port integers>
   binary_path: <absolute path or list of absolute executable paths>
 credential_env_vars: [<UPPER_SNAKE credential variable names; may be empty>]
-verify_command: <non-empty shell command; exit 0 means connected>
+verify_command: <non-empty command line; exit 0 means connected. NOT run through a shell: no ; | & > < ` or $( ; first word must be this tool's own binary; only $NAME of credential_env_vars is expanded>
 log_source_hint:
   kind: none | file | syslog_identifier  # kind: none permits no other keys
   path: <default log path template; required only for kind: file>

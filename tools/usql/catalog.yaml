@@ -14,6 +14,6 @@ detect:
   listening_port: [5432, 3306, 1433]
   binary_path: [/usr/local/bin/usql, /usr/bin/usql]
 credential_env_vars: [USQL_DSN]
-verify_command: 'usql --no-password --command "\conninfo" "$USQL_DSN" | grep -qv "not connected"'
+verify_command: 'usql "$USQL_DSN" -c "select 1"'
 log_source_hint:
   kind: none
