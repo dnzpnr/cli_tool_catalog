@@ -10,3 +10,9 @@ source:
   sha256: 0646efa1ed15a6151ef5e1a4f723825c81935591ad7a01e86685afa8138bc7c9
   archive: tar.gz
   binary_path: gdrive
+detect:
+  binary_path: [/usr/local/bin/gdrive, /usr/bin/gdrive]
+credential_env_vars: []
+verify_command: "gdrive files list"
+log_source_hint:
+  kind: none

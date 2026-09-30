@@ -10,3 +10,10 @@ source:
   sha256: b3046140f8f2add0e2afaaa595b824d445e933d400a00d50a1c038760d4ce13c
   archive: tar.bz2
   binary_path: usql
+detect:
+  listening_port: [5432, 3306, 1433]
+  binary_path: [/usr/local/bin/usql, /usr/bin/usql]
+credential_env_vars: [USQL_DSN]
+verify_command: 'usql --no-password --command "\conninfo" "$USQL_DSN" | grep -qv "not connected"'
+log_source_hint:
+  kind: none

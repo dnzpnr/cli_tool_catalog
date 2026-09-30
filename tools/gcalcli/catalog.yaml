@@ -9,3 +9,9 @@ source:
   asset: https://files.pythonhosted.org/packages/e8/d3/a8a42e0f6e5866fabab479dea5347d7c9adeff39e749a0eb71b2b71b9a3f/gcalcli-4.5.1-py3-none-any.whl
   sha256: e058b62b76ffd4c383946d24c27f2ffb7d784721a11e5b7e40dfaef978810113
   archive: wheel
+detect:
+  binary_path: [/usr/local/bin/gcalcli, /usr/bin/gcalcli]
+credential_env_vars: []
+verify_command: "gcalcli list"
+log_source_hint:
+  kind: none

@@ -19,13 +19,15 @@ signed/published artifact).
 When an operator asks (via Mattermost chat) for a new tool to be monitored,
 the agent:
 
-1. Checks whether that tool is already available locally on the customer's
-   server.
-2. If not, looks up `tools/<name>/catalog.yaml` in this repository.
-3. If found: downloads the pinned asset, verifies its sha256 against the
+1. Looks up `tools/<name>/catalog.yaml` in this repository.
+2. Uses its `detect` signatures to check whether the tool is already available
+   locally on the customer's server.
+3. If it is not available: downloads the pinned asset, verifies its sha256 against the
    value recorded here, extracts it, and makes the binary available locally
    — nothing beyond what the recipe declares.
-4. If not found in this catalog: reports back that the tool is not
+4. Requests the declared credential environment variables, runs the verification
+   command, and uses the log-source hint when configuring monitoring.
+5. If not found in this catalog: reports back that the tool is not
    available. No other action is taken — this repository is the only source
    the agent is allowed to install from.
 
@@ -45,6 +47,16 @@ source:
   archive: tar.gz | tgz | wheel   # only for install_method: archive/pip
   binary_path: <path to the executable inside the extracted archive>
                 # omitted for install_method: pip
+detect:                         # at least one signature; no other sub-keys
+  process_name: <string or list of process-name substrings>
+  listening_port: <port integer or list of port integers>
+  binary_path: <absolute path or list of absolute executable paths>
+credential_env_vars: [<UPPER_SNAKE credential variable names; may be empty>]
+verify_command: <non-empty shell command; exit 0 means connected>
+log_source_hint:
+  kind: none | file | syslog_identifier  # kind: none permits no other keys
+  path: <default log path template; required only for kind: file>
+  tag: <syslog tag; required only for kind: syslog_identifier>
 ```
 
 ## Updating an entry

@@ -10,3 +10,9 @@ source:
   sha256: fe550ffb29b8455be7994303cf8c2563791e1112848374155b012b0cc93e1668
   archive: tar.gz
   binary_path: mgc
+detect:
+  binary_path: [/usr/local/bin/mgc, /usr/bin/mgc]
+credential_env_vars: []
+verify_command: "mgc me get"
+log_source_hint:
+  kind: none
