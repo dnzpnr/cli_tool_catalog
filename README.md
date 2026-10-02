@@ -22,9 +22,11 @@ the agent:
 1. Looks up `tools/<name>/catalog.yaml` in this repository.
 2. Uses its `detect` signatures to check whether the tool is already available
    locally on the customer's server.
-3. If it is not available: downloads the pinned asset, verifies its sha256 against the
-   value recorded here, extracts it, and makes the binary available locally
-   — nothing beyond what the recipe declares.
+3. If it is not available and the recipe is installable: downloads the pinned
+   asset, verifies its sha256 against the value recorded here, extracts it, and
+   makes the binary available locally — nothing beyond what the recipe declares.
+   A `system` recipe is detect-and-verify only; the catalog never installs an
+   operating-system package and returns `system_package_not_installable` instead.
 4. Requests the declared credential environment variables, runs the verification
    command, and uses the log-source hint when configuring monitoring.
 5. If not found in this catalog: reports back that the tool is not
@@ -38,8 +40,8 @@ name: <tool name>
 description: <one line>
 license: <SPDX identifier, must already be on the product's allowlist>
 capabilities_hint: [<short tags describing what it's good for>]
-install_method: archive | pip
-source:
+install_method: archive | pip | system
+source:                         # omitted for install_method: system
   repo: <upstream project URL, for humans>
   version: <exact pinned version/tag>
   asset: <exact download URL for this version>
@@ -77,5 +79,9 @@ doesn't, compute it directly from the downloaded file yourself.
 | `mgc` | v1.9.0 | MIT | Microsoft 365 (Outlook/OneDrive/Teams/Calendar) |
 | `gcalcli` | 4.5.1 | MIT | Google Calendar |
 | `usql` | v0.21.6 | MIT | Multi-database SQL (MySQL, SQL Server, Oracle, SQLite, Snowflake, …) |
+| `docker` | 29.8.2 | Apache-2.0 | Container inspection/logs/lifecycle |
+| `gws` | v0.22.5 | Apache-2.0 | Google Workspace APIs |
+| `ssh` | system | BSD-3-Clause | Secure remote commands |
 
-All verified 2026-09-27.
+The original seven entries were verified 2026-09-27; Docker, GWS and SSH were
+verified 2026-10-03.

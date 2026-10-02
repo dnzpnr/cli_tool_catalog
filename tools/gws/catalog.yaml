@@ -1,0 +1,18 @@
+name: gws
+description: Google Workspace CLI — Gmail, Drive, Calendar, Sheets and other Workspace APIs
+license: Apache-2.0
+capabilities_hint: [gmail, google_drive, google_calendar, google_sheets]
+install_method: archive
+source:
+  repo: https://github.com/googleworkspace/cli
+  version: v0.22.5
+  asset: https://github.com/googleworkspace/cli/releases/download/v0.22.5/google-workspace-cli-x86_64-unknown-linux-gnu.tar.gz
+  sha256: de78ecdbd2f1a84cca0063a7ecbc440240fc14b6ebccbb17f4646b792a8c5c1f
+  archive: tar.gz
+  binary_path: gws
+detect:
+  binary_path: [/usr/local/bin/gws, /usr/bin/gws]
+credential_env_vars: [GOOGLE_WORKSPACE_CLI_CREDENTIALS_FILE]
+verify_command: 'gws drive about get --params ''{"fields":"user"}'''
+log_source_hint:
+  kind: none

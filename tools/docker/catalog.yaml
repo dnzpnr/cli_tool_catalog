@@ -1,0 +1,20 @@
+name: docker
+description: Docker CLI — container inspection, logs and lifecycle operations
+license: Apache-2.0
+capabilities_hint: [container_inspection, container_logs, container_lifecycle]
+install_method: archive
+source:
+  repo: https://github.com/docker/cli
+  version: 29.8.2
+  asset: https://download.docker.com/linux/static/stable/x86_64/docker-29.8.2.tgz
+  sha256: 995d1ef289677f74fd58d8d2c35727b6a4ee389c69db8638a3e42d0487aa5b0f
+  archive: tgz
+  binary_path: docker/docker
+detect:
+  process_name: dockerd
+  binary_path: [/usr/local/bin/docker, /usr/bin/docker]
+credential_env_vars: []
+verify_command: "docker --version"
+log_source_hint:
+  kind: syslog_identifier
+  tag: dockerd

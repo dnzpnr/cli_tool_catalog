@@ -1,0 +1,11 @@
+name: ssh
+description: OpenSSH client — secure remote command execution and file transfer
+license: BSD-3-Clause
+capabilities_hint: [remote_commands, secure_shell]
+install_method: system
+detect:
+  binary_path: /usr/bin/ssh
+credential_env_vars: [SSH_KEY_PATH]
+verify_command: "ssh -V"
+log_source_hint:
+  kind: none
