@@ -1,0 +1,18 @@
+name: cpdctl
+description: IBM Cloud Pak for Data CLI — DataStage dsjob commands require CPDCTL_ENABLE_DSJOB=true; release sha256 is self-computed because the vendor publishes no hash
+license: Apache-2.0
+capabilities_hint: [cloud_pak_for_data, datastage, dsjob]
+install_method: archive
+source:
+  repo: https://github.com/IBM/cpdctl
+  version: v1.10.22
+  asset: https://github.com/IBM/cpdctl/releases/download/v1.10.22/cpdctl_linux_amd64.tar.gz
+  sha256: f842dc0f3f7f42e0ea2226a0d3af45f922ae23560d385c167848ff3530cb659a
+  archive: tar.gz
+  binary_path: cpdctl
+detect:
+  binary_path: [/usr/local/bin/cpdctl, /usr/bin/cpdctl]
+credential_env_vars: [USER_ACCESS_TOKEN, RUNTIME_ENV_APSX_URL]
+verify_command: "cpdctl project list"
+log_source_hint:
+  kind: none

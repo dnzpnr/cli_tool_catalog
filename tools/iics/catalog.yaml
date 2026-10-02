@@ -1,0 +1,18 @@
+name: iics
+description: Informatica IICS/IDMC REST CLI — a 1-star project maintained by a single maintainer
+license: Apache-2.0
+capabilities_hint: [informatica_idmc, asset_management, job_activity]
+install_method: archive
+source:
+  repo: https://github.com/jbrazda/iics-cli
+  version: v0.5.6
+  asset: https://github.com/jbrazda/iics-cli/releases/download/v0.5.6/iics_0.5.6_linux_amd64.tar.gz
+  sha256: 205ae67ebeeca3327512b228e921f8917d41760222e22b95ab9142afc3356287
+  archive: tar.gz
+  binary_path: iics
+detect:
+  binary_path: [/usr/local/bin/iics, /usr/bin/iics]
+credential_env_vars: [IICS_USERNAME, IICS_PASSWORD, IICS_LOGIN_URL]
+verify_command: "iics login"
+log_source_hint:
+  kind: none

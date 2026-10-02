@@ -1,0 +1,18 @@
+name: tgctl
+description: Telegram Bot API CLI — preserves native message_thread_id thread/session data
+license: MIT
+capabilities_hint: [telegram_bot, messaging, forum_threads]
+install_method: archive
+source:
+  repo: https://github.com/jjuanrivvera/tgctl
+  version: v0.5.1
+  asset: https://github.com/jjuanrivvera/tgctl/releases/download/v0.5.1/tgctl_0.5.1_linux_amd64.tar.gz
+  sha256: 5c4c402ae5d3685f6f9a72ddddccd63086a4e8ba4cc27ef56e8f411efd54df5a
+  archive: tar.gz
+  binary_path: tgctl
+detect:
+  binary_path: [/usr/local/bin/tgctl, /usr/bin/tgctl]
+credential_env_vars: [TGCTL_TOKEN]
+verify_command: "tgctl bot info --no-store"
+log_source_hint:
+  kind: none

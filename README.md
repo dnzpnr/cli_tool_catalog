@@ -82,6 +82,9 @@ doesn't, compute it directly from the downloaded file yourself.
 | `docker` | 29.8.2 | Apache-2.0 | Container inspection/logs/lifecycle |
 | `gws` | v0.22.5 | Apache-2.0 | Google Workspace APIs |
 | `ssh` | system | BSD-3-Clause | Secure remote commands |
+| `tgctl` | v0.5.1 | MIT | Telegram Bot API messaging and forum threads |
+| `cpdctl` | v1.10.22 | Apache-2.0 | IBM Cloud Pak for Data and DataStage |
+| `iics` | v0.5.6 | Apache-2.0 | Informatica IICS/IDMC resources |
 
 The original seven entries were verified 2026-09-27; Docker, GWS and SSH were
-verified 2026-10-03.
+verified 2026-10-03; tgctl, cpdctl and iics were verified 2026-10-03.
