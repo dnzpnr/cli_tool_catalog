@@ -38,6 +38,7 @@ the agent:
 ```yaml
 name: <tool name>
 description: <one line>
+superseded_by: <replacement tool name>  # optional; used by deprecated entries
 license: <SPDX identifier, must already be on the product's allowlist>
 capabilities_hint: [<short tags describing what it's good for>]
 install_method: archive | pip | system
@@ -76,7 +77,7 @@ doesn't, compute it directly from the downloaded file yourself.
 | `jira-cli` | v1.7.0 | MIT | Jira tickets |
 | `himalaya` | v2.1.0 | MIT | Email (IMAP/JMAP/Gmail/Microsoft Graph) |
 | `gdrive` | 3.9.1 | MIT | Google Drive files |
-| `mgc` | v1.9.0 | MIT | Microsoft 365 (Outlook/OneDrive/Teams/Calendar) |
+| `mgc` | v1.9.0 | MIT | Deprecated; superseded by `mindalert-graph` |
 | `gcalcli` | 4.5.1 | MIT | Google Calendar |
 | `usql` | v0.21.6 | MIT | Multi-database SQL (MySQL, SQL Server, Oracle, SQLite, Snowflake, …) |
 | `docker` | 29.8.2 | Apache-2.0 | Container inspection/logs/lifecycle |
@@ -85,6 +86,12 @@ doesn't, compute it directly from the downloaded file yourself.
 | `tgctl` | v0.5.1 | MIT | Telegram Bot API messaging and forum threads |
 | `cpdctl` | v1.10.22 | Apache-2.0 | IBM Cloud Pak for Data and DataStage |
 | `iics` | v0.5.6 | Apache-2.0 | Informatica IICS/IDMC resources |
+| `mindalert-slack` | v0.1.1 | MIT | Slack history and messaging |
+| `mindalert-discord` | v0.1.0 | MIT | Discord history and messaging |
+| `mindalert-graph` | v0.1.0 | MIT | Outlook mail and Teams messages |
 
 The original seven entries were verified 2026-09-27; Docker, GWS and SSH were
 verified 2026-10-03; tgctl, cpdctl and iics were verified 2026-10-03.
+The three MindAlert tools were verified against their v0.2.1 release assets
+and published checksums on 2026-10-03. Deprecated entries remain available for
+compatibility and identify their replacement with `superseded_by`.

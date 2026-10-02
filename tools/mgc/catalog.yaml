@@ -1,5 +1,6 @@
 name: mgc
-description: Microsoft Graph CLI — Outlook, OneDrive, Teams, Calendar
+description: DEPRECATED (upstream msgraph-cli archived 2025-08-29) — use mindalert-graph. Microsoft Graph CLI — Outlook, OneDrive, Teams, Calendar
+superseded_by: mindalert-graph
 license: MIT
 capabilities_hint: [ms365_mail, ms365_onedrive, ms365_teams, ms365_calendar]
 install_method: archive

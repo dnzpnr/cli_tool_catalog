@@ -1,0 +1,18 @@
+name: mindalert-graph
+description: "Microsoft Graph CLI — auth-test, mail-list, mail-send, mail-reply, teams-read and teams-post commands for Outlook mail and Teams; preserves native conversationId thread/session fields without flattening; teams-post optionally uses TEAMS_WEBHOOK_URL because Teams sending is not supported with Graph application permission"
+license: MIT
+capabilities_hint: [outlook_mail_read, outlook_mail_send, teams_read, teams_send]
+install_method: archive
+source:
+  repo: https://github.com/dnzpnr/mindalert-cli-tools
+  version: v0.1.0
+  asset: https://github.com/dnzpnr/mindalert-cli-tools/releases/download/v0.2.1/mindalert-graph-0.1.0.tar.gz
+  sha256: ea2845e1ba5f90ea9ae5eb15f5be817b9138b75808b4ed4146d3508576635aad
+  archive: tar.gz
+  binary_path: mindalert-graph
+detect:
+  binary_path: [/usr/local/bin/mindalert-graph, /usr/bin/mindalert-graph]
+credential_env_vars: [MS_TENANT_ID, MS_CLIENT_ID, MS_CLIENT_SECRET]
+verify_command: "mindalert-graph auth-test"
+log_source_hint:
+  kind: none
