@@ -8,6 +8,14 @@ MIT/BSD/Apache-family, matching the product's dependency policy) and its
 exact release artifact hash-verified against the vendor's own published
 checksums where available.
 
+## Explicit license exception: ffmpeg
+
+The catalog's policy is permissive licenses only. The sole explicit exception
+is `ffmpeg` under `GPL-2.0-or-later`, approved by the user on 2026-10-03 and
+recorded in D68.8. This exception is strictly `system`/detect-only: the catalog
+may detect operator-installed ffmpeg and use it as a separate process, but it
+never installs, packages, embeds or distributes ffmpeg.
+
 ## How this is used
 
 Each tool lives in its own directory under `tools/<name>/`, containing one
@@ -90,19 +98,31 @@ doesn't, compute it directly from the downloaded file yourself.
 | `mindalert-discord` | v0.1.1 | MIT | Discord history and messaging |
 | `mindalert-graph` | v0.1.1 | MIT | Outlook mail and Teams messages |
 | `mindalert-whatsapp` | v0.1.1 | MIT | WhatsApp Cloud API sending |
+| `mindalert-video` | v0.2.0 | MIT | Video editing and network-isolated HyperFrames rendering |
+| `hyperframes` | 0.8.114 (system) | Apache-2.0 | HTML-based video rendering and motion graphics |
+| `ffmpeg` | system | GPL-2.0-or-later | Video and audio processing; D68.8 detect-only exception |
 
 `himalaya` needs a `config.toml` and the `HIMALAYA_IMAP_PASSWORD` variable; see its `description`.
 
-The original seven entries were verified 2026-09-27; docker, gws, ssh, tgctl, cpdctl, iics and the four in-house tools were verified 2026-10-03 against release assets and published checksums; in-house tool assets are from release v0.4.0 of mindalert-cli-tools. The cpdctl vendor publishes no checksum, so its hash is self-computed.
+The original seven entries were verified 2026-09-27; docker, gws, ssh, tgctl,
+cpdctl, iics and the four messaging in-house tools were verified 2026-10-03
+against release assets and published checksums; those in-house tool assets are
+from release v0.4.0 of mindalert-cli-tools. `mindalert-video` was independently
+verified against release v0.5.0. The cpdctl vendor publishes no checksum, so
+its hash is self-computed.
 
 ## In-house tools (`mindalert-*`)
 
-The source code for these four tools lives in the MIT-licensed
+The source code for these five tools lives in the MIT-licensed
 [`mindalert-cli-tools`](https://github.com/dnzpnr/mindalert-cli-tools) repository,
 not in this repository. This repository still contains only installation recipes:
 it hosts neither binaries nor source code. Each catalog entry points to a GitHub
 Release asset (a `tar.gz` containing a single executable zipapp) and its sha256.
 Each tool uses only the Python standard library.
+
+`mindalert-video` v0.2.0 is distributed from the `mindalert-cli-tools` GitHub
+Release v0.5.0 as `mindalert-video-0.2.0.tar.gz`; this catalog stores only the
+release URL, metadata and verified hash, never the archive itself.
 
 The tools share this contract:
 

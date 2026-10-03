@@ -1,0 +1,11 @@
+name: ffmpeg
+description: "Operator-installed ffmpeg for video and audio processing; system detect-only under the D68.8 GPL exception"
+license: GPL-2.0-or-later
+capabilities_hint: [video_processing, audio_processing]
+install_method: system
+detect:
+  binary_path: [/usr/local/bin/ffmpeg, /usr/bin/ffmpeg]
+credential_env_vars: []
+verify_command: "ffmpeg -version"
+log_source_hint:
+  kind: none

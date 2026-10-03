@@ -1,0 +1,11 @@
+name: hyperframes
+description: "Operator-installed HyperFrames v0.8.114; requires Node >= 22, ffmpeg and Chrome; telemetry MUST be disabled with HYPERFRAMES_NO_TELEMETRY=1 and DO_NOT_TRACK=1 because it sends an environment fingerprint"
+license: Apache-2.0
+capabilities_hint: [video_rendering, motion_graphics]
+install_method: system
+detect:
+  binary_path: [/usr/local/bin/hyperframes, /usr/bin/hyperframes]
+credential_env_vars: []
+verify_command: "hyperframes --version"
+log_source_hint:
+  kind: none
