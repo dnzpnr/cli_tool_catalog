@@ -89,9 +89,12 @@ doesn't, compute it directly from the downloaded file yourself.
 | `mindalert-slack` | v0.1.1 | MIT | Slack history and messaging |
 | `mindalert-discord` | v0.1.0 | MIT | Discord history and messaging |
 | `mindalert-graph` | v0.1.0 | MIT | Outlook mail and Teams messages |
+| `mindalert-whatsapp` | v0.1.0 | MIT | WhatsApp Cloud API sending |
 
 The original seven entries were verified 2026-09-27; Docker, GWS and SSH were
 verified 2026-10-03; tgctl, cpdctl and iics were verified 2026-10-03.
 The three MindAlert tools were verified against their v0.2.1 release assets
 and published checksums on 2026-10-03. Deprecated entries remain available for
 compatibility and identify their replacement with `superseded_by`.
+`mindalert-whatsapp` was verified against its v0.3.0 release asset and
+published checksum on 2026-10-03.

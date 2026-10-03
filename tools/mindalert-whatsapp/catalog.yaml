@@ -1,0 +1,18 @@
+name: mindalert-whatsapp
+description: "WhatsApp Cloud API sender-only CLI — auth-test and send commands; inbound messages require a webhook and history returns visible unsupported; free-form messages are limited to the 24-hour customer service window and approved templates are required outside it; unofficial WhatsApp clients are deliberately not used because they risk number bans"
+license: MIT
+capabilities_hint: [whatsapp_send]
+install_method: archive
+source:
+  repo: https://github.com/dnzpnr/mindalert-cli-tools
+  version: v0.1.0
+  asset: https://github.com/dnzpnr/mindalert-cli-tools/releases/download/v0.3.0/mindalert-whatsapp-0.1.0.tar.gz
+  sha256: 3f1f40200cdd21a86e658e15c285567a5c4f1b341cef06ecbc1c2acfe1753063
+  archive: tar.gz
+  binary_path: mindalert-whatsapp
+detect:
+  binary_path: [/usr/local/bin/mindalert-whatsapp, /usr/bin/mindalert-whatsapp]
+credential_env_vars: [WHATSAPP_ACCESS_TOKEN, WHATSAPP_PHONE_NUMBER_ID]
+verify_command: "mindalert-whatsapp auth-test"
+log_source_hint:
+  kind: none
