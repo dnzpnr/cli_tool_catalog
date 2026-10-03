@@ -1,5 +1,5 @@
 name: himalaya
-description: Email CLI — IMAP/JMAP/Gmail/Microsoft Graph mailboxes
+description: Email CLI — IMAP/JMAP/Gmail/Microsoft Graph mailboxes; requires ~/.config/himalaya/config.toml and an account with default = true (otherwise mailbox list returns "No default account found"); read the password from the environment with imap.sasl.plain.password.command = ["printenv", "HIMALAYA_IMAP_PASSWORD"]; Gmail requires 2-Step Verification and an app password, which grants access to the ENTIRE mailbox with no read-only boundary (use Gmail API/OAuth via gws for read-only authorization); Gmail folder names are localized (for example, Turkish [Gmail]/Gönderilmiş Postalar), so configure aliases accordingly
 license: MIT
 capabilities_hint: [mail_read, mail_send]
 install_method: archive
@@ -12,7 +12,7 @@ source:
   binary_path: himalaya
 detect:
   binary_path: [/usr/local/bin/himalaya, /usr/bin/himalaya]
-credential_env_vars: []
+credential_env_vars: [HIMALAYA_IMAP_PASSWORD]
 verify_command: "himalaya mailbox list"
 log_source_hint:
   kind: none
