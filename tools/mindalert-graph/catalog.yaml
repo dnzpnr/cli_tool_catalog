@@ -5,9 +5,9 @@ capabilities_hint: [outlook_mail_read, outlook_mail_send, teams_read, teams_send
 install_method: archive
 source:
   repo: https://github.com/dnzpnr/mindalert-cli-tools
-  version: v0.1.0
-  asset: https://github.com/dnzpnr/mindalert-cli-tools/releases/download/v0.2.1/mindalert-graph-0.1.0.tar.gz
-  sha256: ea2845e1ba5f90ea9ae5eb15f5be817b9138b75808b4ed4146d3508576635aad
+  version: v0.1.1
+  asset: https://github.com/dnzpnr/mindalert-cli-tools/releases/download/v0.4.0/mindalert-graph-0.1.1.tar.gz
+  sha256: 849d9c37a37533b16000c9a4ee80c5c6aadcc648c24a919d893d4a6ea17a4041
   archive: tar.gz
   binary_path: mindalert-graph
 detect:

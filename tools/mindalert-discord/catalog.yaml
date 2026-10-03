@@ -5,9 +5,9 @@ capabilities_hint: [discord_read, discord_send]
 install_method: archive
 source:
   repo: https://github.com/dnzpnr/mindalert-cli-tools
-  version: v0.1.0
-  asset: https://github.com/dnzpnr/mindalert-cli-tools/releases/download/v0.2.1/mindalert-discord-0.1.0.tar.gz
-  sha256: 41e35eac8544bb97d0e2818044e86cd41794a9703b7a5ae281402e4cd77e0f20
+  version: v0.1.1
+  asset: https://github.com/dnzpnr/mindalert-cli-tools/releases/download/v0.4.0/mindalert-discord-0.1.1.tar.gz
+  sha256: 8f1e65ca4a71bba8aa17ce4c9d62d2ee207bb3ec36f9797acaac1fe5e1ab0b8b
   archive: tar.gz
   binary_path: mindalert-discord
 detect:

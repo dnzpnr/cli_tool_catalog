@@ -5,9 +5,9 @@ capabilities_hint: [slack_read, slack_send]
 install_method: archive
 source:
   repo: https://github.com/dnzpnr/mindalert-cli-tools
-  version: v0.1.1
-  asset: https://github.com/dnzpnr/mindalert-cli-tools/releases/download/v0.2.1/mindalert-slack-0.1.1.tar.gz
-  sha256: 91bd0a84b703f091b43f8004e8d660788fcb9e958a089b206aaedf8112d65d42
+  version: v0.1.2
+  asset: https://github.com/dnzpnr/mindalert-cli-tools/releases/download/v0.4.0/mindalert-slack-0.1.2.tar.gz
+  sha256: c650e0f664d04904af81fcef9ca421dd20eee153a4a59c58c98efddcf2e7912c
   archive: tar.gz
   binary_path: mindalert-slack
 detect:
