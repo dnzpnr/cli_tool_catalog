@@ -1,5 +1,5 @@
 name: usql
-description: Universal SQL CLI — MySQL, SQL Server, Oracle, SQLite, Snowflake and more
+description: Universal SQL CLI — MySQL, SQL Server, Oracle, SQLite, Snowflake and more; Oracle Instant Client is not required because the Oracle driver is pure Go (verified client-free with v0.21.6 against Oracle Free 23ai); example DSN oracle://user:pass@host:1521/service
 license: MIT
 capabilities_hint: [multi_database_sql]
 install_method: archive
@@ -11,9 +11,9 @@ source:
   archive: tar.bz2
   binary_path: usql
 detect:
-  listening_port: [5432, 3306, 1433]
+  listening_port: [5432, 3306, 1433, 1521]
   binary_path: [/usr/local/bin/usql, /usr/bin/usql]
 credential_env_vars: [USQL_DSN]
-verify_command: 'usql "$USQL_DSN" -c "select 1"'
+verify_command: 'usql "$USQL_DSN" -c "\conninfo"'
 log_source_hint:
   kind: none
