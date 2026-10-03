@@ -13,6 +13,6 @@ source:
 detect:
   binary_path: [/usr/local/bin/gws, /usr/bin/gws]
 credential_env_vars: [GOOGLE_WORKSPACE_CLI_CREDENTIALS_FILE]
-verify_command: 'gws drive about get --params ''{"fields":"user"}'''
+verify_command: 'gws gmail users getProfile --params ''{"userId":"me"}'''
 log_source_hint:
   kind: none
