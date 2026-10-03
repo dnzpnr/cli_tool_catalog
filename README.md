@@ -86,15 +86,36 @@ doesn't, compute it directly from the downloaded file yourself.
 | `tgctl` | v0.5.1 | MIT | Telegram Bot API messaging and forum threads |
 | `cpdctl` | v1.10.22 | Apache-2.0 | IBM Cloud Pak for Data and DataStage |
 | `iics` | v0.5.6 | Apache-2.0 | Informatica IICS/IDMC resources |
-| `mindalert-slack` | v0.1.1 | MIT | Slack history and messaging |
-| `mindalert-discord` | v0.1.0 | MIT | Discord history and messaging |
-| `mindalert-graph` | v0.1.0 | MIT | Outlook mail and Teams messages |
-| `mindalert-whatsapp` | v0.1.0 | MIT | WhatsApp Cloud API sending |
+| `mindalert-slack` | v0.1.2 | MIT | Slack history and messaging |
+| `mindalert-discord` | v0.1.1 | MIT | Discord history and messaging |
+| `mindalert-graph` | v0.1.1 | MIT | Outlook mail and Teams messages |
+| `mindalert-whatsapp` | v0.1.1 | MIT | WhatsApp Cloud API sending |
 
-The original seven entries were verified 2026-09-27; Docker, GWS and SSH were
-verified 2026-10-03; tgctl, cpdctl and iics were verified 2026-10-03.
-The three MindAlert tools were verified against their v0.2.1 release assets
-and published checksums on 2026-10-03. Deprecated entries remain available for
-compatibility and identify their replacement with `superseded_by`.
-`mindalert-whatsapp` was verified against its v0.3.0 release asset and
-published checksum on 2026-10-03.
+`himalaya` needs a `config.toml` and the `HIMALAYA_IMAP_PASSWORD` variable; see its `description`.
+
+The original seven entries were verified 2026-09-27; docker, gws, ssh, tgctl, cpdctl, iics and the four in-house tools were verified 2026-10-03 against release assets and published checksums; in-house tool assets are from release v0.4.0 of mindalert-cli-tools. The cpdctl vendor publishes no checksum, so its hash is self-computed.
+
+## In-house tools (`mindalert-*`)
+
+The source code for these four tools lives in the MIT-licensed
+[`mindalert-cli-tools`](https://github.com/dnzpnr/mindalert-cli-tools) repository,
+not in this repository. This repository still contains only installation recipes:
+it hosts neither binaries nor source code. Each catalog entry points to a GitHub
+Release asset (a `tar.gz` containing a single executable zipapp) and its sha256.
+Each tool uses only the Python standard library.
+
+The tools share this contract:
+
+- stdout contains exactly one JSON document on success.
+- On error, stdout is empty and stderr contains `{"error","detail"}`.
+- Exit codes are 1 for API rejection, 2 for usage errors, 3 for network errors
+  (`network_error`, with the cause category in `detail`), 4 for missing
+  credentials and 5 for rate limiting.
+- Tokens are read only from environment variables, never from argv.
+- Thread and session fields are not flattened.
+
+To publish a new version:
+
+1. Tag `v*` in the tool repository.
+2. Create the release and its assets there.
+3. Update the corresponding catalog entry's `version`, `asset` and `sha256` here.
