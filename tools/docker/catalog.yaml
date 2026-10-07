@@ -16,6 +16,30 @@ detect:
 credential_env_vars: []
 verify_command: "docker --version"
 monitoring_class: A
+monitoring:
+  collectors:
+    - name: unhealthy_containers
+      args: [ps, --filter, health=unhealthy, --format, json]
+      output: jsonl
+      sample: true
+      severity: ERROR
+      identity_fields: [ID]
+      fingerprint_fields: [ID, Names, State, HealthStatus]
+      resource_field: Names
+      event_type: container.unhealthy
+      interval: 2m
+      verified: true
+    - name: restarting_containers
+      args: [ps, --filter, status=restarting, --format, json]
+      output: jsonl
+      sample: true
+      severity: ERROR
+      identity_fields: [ID]
+      fingerprint_fields: [ID, Names, State, HealthStatus]
+      resource_field: Names
+      event_type: container.restarting
+      interval: 2m
+      verified: true
 log_source_hint:
   kind: syslog_identifier
   tag: dockerd
