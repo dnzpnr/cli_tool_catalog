@@ -14,5 +14,11 @@ detect:
   binary_path: [/usr/local/bin/cpdctl, /usr/bin/cpdctl]
 credential_env_vars: [USER_ACCESS_TOKEN, RUNTIME_ENV_APSX_URL]
 verify_command: "cpdctl project list"
+monitoring_class: B
+monitoring:
+  probe:
+    command: "cpdctl project list"
+    interval: 30m
 log_source_hint:
   kind: none
+  reason: "kendi günlüğü yok; sağlık/kimlik doğrulaması monitoring.probe ile yoklanır."

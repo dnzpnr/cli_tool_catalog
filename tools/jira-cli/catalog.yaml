@@ -14,5 +14,11 @@ detect:
   binary_path: [/usr/local/bin/jira, /usr/bin/jira]
 credential_env_vars: [JIRA_API_TOKEN]
 verify_command: "jira me"
+monitoring_class: B
+monitoring:
+  probe:
+    command: "jira me"
+    interval: 30m
 log_source_hint:
   kind: none
+  reason: "kendi günlüğü yok; sağlık/kimlik doğrulaması monitoring.probe ile yoklanır."

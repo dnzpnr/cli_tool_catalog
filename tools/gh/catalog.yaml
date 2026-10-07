@@ -14,5 +14,11 @@ detect:
   binary_path: [/usr/local/bin/gh, /usr/bin/gh]
 credential_env_vars: [GH_TOKEN]
 verify_command: "gh auth status --hostname github.com"
+monitoring_class: B
+monitoring:
+  probe:
+    command: "gh auth status --hostname github.com"
+    interval: 30m
 log_source_hint:
   kind: none
+  reason: "kendi günlüğü yok; sağlık/kimlik doğrulaması monitoring.probe ile yoklanır."

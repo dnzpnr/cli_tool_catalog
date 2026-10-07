@@ -7,5 +7,7 @@ detect:
   binary_path: [/usr/local/bin/ffmpeg, /usr/bin/ffmpeg]
 credential_env_vars: []
 verify_command: "ffmpeg -version"
+monitoring_class: C
 log_source_hint:
   kind: none
+  reason: "toplu işleme aracı: yerleşik servisi ve kendi günlüğü yok; hatalar onu çağıran işin günlüğünde görünür (collection:* iş sağlığı, ajan günlüğü)."

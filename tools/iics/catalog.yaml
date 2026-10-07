@@ -14,5 +14,11 @@ detect:
   binary_path: [/usr/local/bin/iics, /usr/bin/iics]
 credential_env_vars: [IICS_USERNAME, IICS_PASSWORD, IICS_LOGIN_URL]
 verify_command: "iics login"
+monitoring_class: B
+monitoring:
+  probe:
+    command: "iics login"
+    interval: 1h
 log_source_hint:
   kind: none
+  reason: "kendi günlüğü yok; sağlık/kimlik doğrulaması monitoring.probe ile yoklanır."

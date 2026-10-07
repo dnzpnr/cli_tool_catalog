@@ -7,5 +7,7 @@ detect:
   binary_path: /usr/bin/ssh
 credential_env_vars: [SSH_KEY_PATH]
 verify_command: "ssh -V"
+monitoring_class: A
 log_source_hint:
-  kind: none
+  kind: syslog_identifier
+  tag: sshd

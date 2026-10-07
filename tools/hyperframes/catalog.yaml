@@ -7,5 +7,7 @@ detect:
   binary_path: [/usr/local/bin/hyperframes, /usr/bin/hyperframes]
 credential_env_vars: []
 verify_command: "hyperframes --version"
+monitoring_class: C
 log_source_hint:
   kind: none
+  reason: "toplu video üretim aracı: yerleşik servisi ve kendi günlüğü yok; hatalar onu çağıran işin günlüğünde görünür."

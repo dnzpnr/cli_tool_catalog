@@ -14,5 +14,11 @@ detect:
   binary_path: [/usr/local/bin/mindalert-graph, /usr/bin/mindalert-graph]
 credential_env_vars: [MS_TENANT_ID, MS_CLIENT_ID, MS_CLIENT_SECRET]
 verify_command: "mindalert-graph auth-test"
+monitoring_class: B
+monitoring:
+  probe:
+    command: "mindalert-graph auth-test"
+    interval: 30m
 log_source_hint:
   kind: none
+  reason: "kendi günlüğü yok; sağlık/kimlik doğrulaması monitoring.probe ile yoklanır."

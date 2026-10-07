@@ -14,5 +14,11 @@ detect:
   binary_path: [/usr/local/bin/himalaya, /usr/bin/himalaya]
 credential_env_vars: [HIMALAYA_IMAP_PASSWORD]
 verify_command: "himalaya mailbox list"
+monitoring_class: B
+monitoring:
+  probe:
+    command: "himalaya mailbox list"
+    interval: 30m
 log_source_hint:
   kind: none
+  reason: "kendi günlüğü yok; sağlık/kimlik doğrulaması monitoring.probe ile yoklanır."

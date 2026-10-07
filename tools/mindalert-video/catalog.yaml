@@ -14,5 +14,11 @@ detect:
   binary_path: [/usr/local/bin/mindalert-video, /usr/bin/mindalert-video]
 credential_env_vars: [MINDALERT_VIDEO_ROOT]
 verify_command: "mindalert-video doctor"
+monitoring_class: B
+monitoring:
+  probe:
+    command: "mindalert-video doctor"
+    interval: 1h
 log_source_hint:
   kind: none
+  reason: "kendi günlüğü yok; sağlık/kimlik doğrulaması monitoring.probe ile yoklanır."
